@@ -1,0 +1,108 @@
+<?php
+function imagelinethick($image, $x1, $y1, $x2, $y2, $color, $thick)
+{
+    if ($thick == 1)
+        return imageline($image, $x1, $y1, $x2, $y2, $color);
+    $t = $thick / 2 - 0.5;
+    if ($x1 == $x2 || $y1 == $y2)
+        return imagefilledrectangle($image, round(min($x1, $x2) - $t), round(min($y1, $y2) - $t), round(max($x1, $x2) + $t), round(max($y1, $y2) + $t), $color);
+    $k = ($y2 - $y1) / ($x2 - $x1); //y = kx + q
+    $a = $t / sqrt(1 + pow($k, 2));
+    $points = array(
+        round($x1 - (1+$k)*$a), round($y1 + (1-$k)*$a),
+        round($x1 - (1-$k)*$a), round($y1 - (1+$k)*$a),
+        round($x2 + (1+$k)*$a), round($y2 - (1-$k)*$a),
+        round($x2 + (1-$k)*$a), round($y2 + (1+$k)*$a),
+    );
+    imagefilledpolygon($image, $points, 4, $color);
+    return imagepolygon($image, $points, 4, $color);
+}
+function join_css($img, $a1, $a2)
+{
+	$red = ImageColorAllocate($img, 255, 0, 0);
+	Imagelinethick($img, $a1[0], $a1[1], $a2[0], $a2[1], $red, 3);
+}
+
+$img = imagecreatefromjpeg('1.jpg');
+$color = ImageColorAllocate($img, 0, 0, 0);//black
+$white = ImageColorAllocate($img, 255, 255, 255);
+$blue = ImageColorAllocate($img, 0, 0, 255);
+$red = ImageColorAllocate($img, 255, 0, 0);
+//(0,0,330,443)
+
+$p1=array(160, 415, 13, 13, $color,1);//1
+$p2=array(140, 385, 10, 10, $color,2);//2
+$p3=array(180, 385, 10, 10, $color,3);//3
+$p4=array(160, 365, 10, 10, $color,4);//4
+$p5=array(160, 333, 10, 10, $color,5);//5
+$p6=array(82, 335, 10, 10, $color,6);//6
+$p7=array(82, 280, 10, 10, $color,7);//7
+$p8=array(200, 337, 10, 10, $color,8);//8
+$p9=array(242, 335, 10, 10, $color,9);//9
+$p10=array(242, 280, 10, 10, $color,10);//10
+$p11=array(160, 263, 15, 15, $color,11);//11
+$p12=array(161, 232, 10, 10, $color,12);//12
+$p13=array(160, 200, 10, 10, $color,13);//13
+$p14=array(160, 150, 10, 10, $color,14);//14
+$p15=array(126, 137, 10, 10, $color,15);//15
+$p16=array(110, 70, 10, 10, $color,16);//16
+$p17=array(267, 210, 10, 10, $color,17);//17
+$p18=array(265, 153, 10, 10, $color,18);//18
+$p19=array(205, 135, 10, 10, $color,19);//19
+$p20=array(160, 65, 18, 18, $red,20);//20
+$p21=array(160, 65, 18, 18, $red,21);//21
+$p22=array(160, 65, 18, 18, $red,22);//22
+$p=array($p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8,$p9,$p10,$p11,$p12,$p13,$p14,$p15,$p16,$p17,$p18,$p19,$p20,$p21,$p22);
+
+$qid=$_GET['qid'];
+$w=0;
+while($p[$w][5]!=$qid)
+	$w++;	//final $w will be the current index of current question in $p[]
+
+join_css($img, $p1, $p2);
+join_css($img, $p2, $p4);
+join_css($img, $p4, $p6);
+join_css($img, $p6, $p7);
+join_css($img, $p7, $p11);
+
+join_css($img, $p1, $p3);
+join_css($img, $p3, $p4);
+join_css($img, $p4, $p8);
+join_css($img, $p8, $p9);
+join_css($img, $p9, $p10);
+join_css($img, $p10, $p11);
+
+//join_css($img, $p1, $p4);
+join_css($img, $p4, $p5);
+join_css($img, $p5, $p11);
+
+join_css($img, $p11, $p12);
+join_css($img, $p12, $p13);
+
+join_css($img, $p13, $p15);
+join_css($img, $p15, $p16);
+join_css($img, $p16, $p20);
+
+join_css($img, $p13, $p17);
+join_css($img, $p17, $p18);
+join_css($img, $p18, $p19);
+join_css($img, $p19, $p20);
+
+join_css($img, $p13, $p14);
+join_css($img, $p14, $p20);
+
+for($i=0;$i<=20;$i++)
+{	
+if($i == $w)
+{	
+	ImageFilledEllipse($img, $p[$i][0], $p[$i][1], 18, 18, $blue);
+	Imagettftext($img, 15, 0, $p[$i][0]+10, $p[$i][1]+10, $red, 'arial.ttf', 'You are here.');
+}
+else
+	ImageFilledEllipse($img, $p[$i][0], $p[$i][1], $p[$i][2], $p[$i][3], $p[$i][4]);
+
+}
+//header('Content-Type: image/png');
+imagepng($img);
+imagedestroy($img);
+?>

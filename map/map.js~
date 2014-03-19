@@ -1,0 +1,5 @@
+<script>
+$(document).keyup(function(e) {
+  if (e.keyCode == 77) { $('#map').slideToggle(); }
+});
+</script>

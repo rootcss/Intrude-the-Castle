@@ -1,0 +1,112 @@
+@font-face{font-family: myFont;src: url(../font.ttf);}
+
+#welcome{position: fixed;right: 0px;left: 0px;width: 100%;height: 100%;overflow: hidden;background: rgba(0,0,0,0.7);z-index: 100;}
+#status{right: 0px;left: 0px;top: 0px;bottom: 0px;width: 300px;height: 300px;background: #dddddd;
+position: absolute;margin:0px auto;border-radius: 3px;text-align: center;font-size: 22px;}
+#close{font-size: 25px;left: 270px;top: 0px;position: absolute;padding: 5px;}
+
+body{margin:0px;padding: 0px;}
+#wrapper{width: 1100px;height:620px;margin:0px auto;}
+
+/*HEADER*/
+#header{top: 0px;left: 0px;height: 60px;width: 100%;}
+#header_content{height: 40px;width: 100%;bottom: 0px;border-radius: 0px 0px 65px 65px;
+background: #1c1c1c;color: #fafafa;opacity: 0.7;}
+#header_pull{width: 55px;height: 25px;background: #FACC2E;position: absolute;z-index: 40;margin-left: 532px;
+	border-radius: 0px 0px 30px 30px;font-size: 35px;text-align: center;font-weight: bold;}
+
+#navbar{height:35px;float:right;clear:both;text-align:center;margin-top:-37px;color: #fafafa;margin-right: 30px;}
+#navbar ul{margin:0;padding:0;list-style-type:none;padding: 5px;color: #fafafa;}
+#navbar ul li{padding:4px 10px 4px 10px;float:left;font-size:17px;color:#000000;font-weight: bold;color: #fafafa;}
+#navbar ul li:hover{background:#ffffff;border-radius:4px;color: #000000;}
+#navbar a{float:left;display:block;text-decoration:none;color: #fafafa;}
+#logo{float: left;font-size: 27px;padding: 3px;padding-left: 10px;color: #fafafa;}
+#logo a{text-decoration: none;font-weight: bold;color: #fafafa;}
+#logo a:visit{text-decoration: none;font-weight: bold;color: #fafafa;}
+#aaruush{width: 240px;height: 35px;margin: 0px auto;}
+#first_a{height: 35px;float:left;width:50px ;}
+#second_a{height: 35px;width:190px ;float:right;}
+
+/*CONTAINER*/
+#container{margin:0px auto;width: 100%;height: 500px;}
+#holder{margin:0px auto;width: 1100px;height: 100% auto;min-height: 580px;min-width: 100%;}
+#image{margin:0px auto;max-height: 560px;max-width: 1100px;left: 0px;right: 0px;position: absolute;border-radius: 5px 5px 5px 5px;}
+#data_content{margin:0px auto;width: 1100px;height: 100% auto;min-height: 580px;}
+
+/*LEFTSIDE*/
+#leftside_h{position: absolute;left:0px;top:100px;height: 500px;width: 300px;}
+#leftside_e{position: absolute;left:0px;top:100px;height: 500px;width: 300px;}
+#leftside_a{position: absolute;left:0px;top:100px;height: 500px;width: 300px;}
+.leftcontent{width: 100%;height: 100%;background: rgba(10,10,10,0.9);color: #eeeeee;border-radius: 0px 10px 10px 0px;padding: 10px;padding-left: 50px;font-size: 20px;}
+.leftclose{position:absolute;right: 0px;top: 0px;padding-top: 10px;color: #fafafa;font-weight: bold;width: 30px;height: 30px;}	
+#arrow_h{position: absolute;left: 0px;height: 65px;width: 30px;background: #FACC2E;top:100px;border-radius: 0px 30px 30px 0px;font-weight: bold;font-size: 25px;}
+#arrow_e{position: absolute;left: 0px;height: 65px;width: 30px;background: #FACC2E;top:200px;border-radius: 0px 30px 30px 0px;font-weight: bold;font-size: 25px;}
+#arrow_a{position: absolute;left: 0px;height: 65px;width: 30px;background: #FACC2E;top:300px;border-radius: 0px 30px 30px 0px;font-weight: bold;font-size: 25px;}
+#arrow_m{position: absolute;left: 0px;height: 65px;width: 30px;background: #FACC2E;top:400px;border-radius: 0px 30px 30px 0px;font-weight: bold;font-size: 25px;}
+#arrow_s{position: absolute;left: 0px;height: 65px;width: 30px;background: #FACC2E;top:500px;border-radius: 0px 30px 30px 0px;font-weight: bold;font-size: 25px;}
+#arrow_h:hover{background:#cccccc;}
+#arrow_e:hover{background:#cccccc;}
+#arrow_a:hover{background:#cccccc;}
+#arrow_m:hover{background:#cccccc;}
+
+
+#start_btn{width:80px;height: 40px;font-size: 23px;}
+#continue_btn{width:150px;height: 40px;font-size: 23px;}
+#next_btn{width:150px;height: 40px;font-size: 23px;}
+#back_btn{position: absolute;float: right;font-size: 22px;background-color: #000000;opacity:0.8;color: #fafafa;
+	border-radius: 20px 0px 0px 200px;padding: 5px;margin-left: 1000px;width: 130px;border: 1px solid red;z-index: 50;}
+#back_btn:hover{color:#ffffff;border: 1px solid white;color: red;}	
+#incorrect_button{width:150px;height: 40px;font-size: 23px;}
+
+#ans{border: 0px solid white;background: rgba(255,255,255,0.8);margin: 0 0 10px 0;font-size: 20px;border-radius:50px 0px 50px 0px;padding: 5px 20px 5px 20px; color: red;}
+#answer_btn{border: 0px solid white;background: rgba(255,255,255,0.8);margin: 0 0 10px 0;font-size: 20px;border-radius:50px 0px 50px 0px;padding: 5px 20px 5px 20px;color: black;}
+#data_content1{width: 1100px;height: 100%;margin: 0px auto;}
+#question{margin-left:150px;width: 800px;height: 470px;background: #777777;position: absolute;background: rgba(0,0,20,0.5);color: #fafafa;
+	padding: 0px 15px 30px 15px;border-radius: 3px 3px 0px 0px;text-align: center;font-size: 23px;}
+#header_question{margin: 0px auto;width: 800px;height:30px;background: rgba(0,0,20,0.7);color: #fafafa;padding: 15px;border-radius: 3px;
+font-size: 27px;text-align: center;margin-left: -15px;border-radius: 5px;}
+#user_answer{width: 790px;height: 30px;background: rgba(0,0,20,0.9);margin: 0px auto;padding: 20px;margin-top: 0px;font-size: 18px;margin-left: 150px;border-radius: 0px 0px 5px 5px;}
+#image_ques{width: 1100px;height: 580px;background: #111111;margin: 0px auto;float: left;position: absolute;}
+/*left div is the area on which we click to get the image of a particular question*/
+#left{margin-top: 0px;width: 50px;height: 60px;background: #000000;position: absolute;font-size: 40px;color: white;text-align: center;margin-left: 100px;border: 1px solid white;}
+#left:hover{color: red;}
+.clickhere{font-size: 11px;}
+
+
+.btn{background: #cccccc;border: 0px solid white;font-weight: bold;margin-top: 100px;font-size: 25px;padding: 7px;}
+.btn:hover{color: #fafafa;background: #000000;border: 1px solid #ffffff;}
+
+#forthefont{font-family: myFont;}
+
+
+
+#share1{background: #3b5998;padding: 5px;border-radius: 5px;float: left;font-size: 18px;margin-top: 15px;margin-left: 5px;}
+#share1 a{color: #ffffff;text-decoration: none;}
+#share1 a:visited{color: #fafafa;}
+#share1 a:hover{color: black;}
+#share2{margin-left: 180px;}
+#share2 input{width:200px;font-size: 12px;border: 0px;padding: 2px;padding-left: 5px;}
+.sometext{font-size: 13px;color: #fafafa;margin-left: 16px;}
+
+#footer{width: 100%;height: 40px;position: fixed;left: 0px;right: 0px;bottom: 0px;background: rgba(0,0,20,0.7);}
+
+
+#loading{position: absolute;top: 35%;left: 50%;}
+
+
+#confirmation{position: absolute;top: 0px;bottom: 0px;right: 0px;left: 0px;background: rgba(0,0,50,0.5);overflow: hidden;z-index: 200;}
+#data_confirm{width: 300px;height: 300px;background: #cccccc;margin: 0px auto;font-size: 30px;text-align: center;}
+#positive{font-size: 25px;background: rgb(0,130,0);padding: 5px;border: 0px;font-weight: bold;}
+#negative{font-size: 25px;background: rgb(200,0,0);padding: 5px;border: 0px;font-weight: bold;}
+#positive:hover{color: #fafafa;}
+#negative:hover{color: #fafafa;}
+
+#confirmation2{position: absolute;top: 0px;bottom: 0px;right: 0px;left: 0px;background: rgba(0,0,50,0.5);overflow: hidden;z-index: 200;}
+#data_confirm2{width: 300px;height: 300px;background: #cccccc;margin: 0px auto;font-size: 30px;text-align: center;}
+#positive2{font-size: 25px;background: rgb(0,130,0);padding: 5px;border: 0px;font-weight: bold;}
+#negative2{font-size: 25px;background: rgb(200,0,0);padding: 5px;border: 0px;font-weight: bold;}
+#positive2:hover{color: #fafafa;}
+#negative2:hover{color: #fafafa;}
+
+
+iframe{border: 1px solid black;}
